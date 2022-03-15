@@ -1,12 +1,19 @@
-import React from 'react';
+import React, {useEffect, useContext} from 'react';
 import {StyleSheet, View} from 'react-native';
 import {Container, Box, Button, Text, Center, HStack} from 'native-base';
 import {useNavigation} from '@react-navigation/native';
+
+import FirebaseContext from '../context/firebase/firebaseContext';
 
 import globalStyles from '../styles/global';
 
 const NuevaOrden = () => {
   const navigation = useNavigation();
+  const {obtenerProductos} = useContext(FirebaseContext);
+
+  useEffect(() => {
+    obtenerProductos();
+  }, []);
   return (
     <Center flex={1}>
       <Button

@@ -19,7 +19,7 @@ import PedidosContext from '../context/pedido/pedidosContext';
 import globalStyles from '../styles/global';
 const Menu = () => {
   // context de firebase
-  const {menu, obtenerProductos} = useContext(FirebaseContext);
+  const {menu} = useContext(FirebaseContext);
   // context de Pedidos
   const {seleccionarPlatillo} = useContext(PedidosContext);
 
@@ -29,9 +29,8 @@ const Menu = () => {
   const [platillos, setplatillos] = useState([]);
 
   useEffect(() => {
-    obtenerProductos();
     setplatillos(menu);
-    console.log(menu);
+    //console.log(menu);
   }, []);
 
   if (platillos.length === 0) {

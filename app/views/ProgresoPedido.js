@@ -39,7 +39,7 @@ const ProgresoPedido = () => {
         {!completado && tiempo > 0 && (
           <>
             <Text>Su orden estara lista en </Text>
-            <Text>
+            <Text p={10}>
               <CountDown
                 date={Date.now() + tiempo * 60000}
                 renderer={renderer}
